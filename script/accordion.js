@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 featureSubElements[index].classList.add('hidden');
                 btn.classList.remove('feature__link_active');
             }
-            
-            // featureSubElements[index].classList.remove('hidden');
-            // btn.classList.add('feature__link_active');
         })
     })
 });
