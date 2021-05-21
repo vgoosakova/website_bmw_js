@@ -3,10 +3,12 @@ const modalElement = document.querySelector('.modal');
 
 const openModal = () => {
     modalElement.classList.remove('hidden');
+    disableScroll();
 }
 
 const closeModal = () => {
     modalElement.classList.add('hidden');
+    enableScroll();
 }
 
 moreElements.forEach(more => {
@@ -20,4 +22,4 @@ modalElement.addEventListener('click', (event) => {
     || target.classList.contains('modal__close')) {
         closeModal()
     }
-})
+});
