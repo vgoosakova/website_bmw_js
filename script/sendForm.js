@@ -18,8 +18,6 @@ const sendData = (data, callBack, falseCallBack) => {
     request.send(data)
 };
 
-const formElements = document.querySelectorAll('.form');
-
 const formHandler = (form) => {
     const smallElement = document.createElement('small');
     form.append(smallElement);
@@ -69,4 +67,9 @@ const formHandler = (form) => {
     })
 };
 
-formElements.forEach(formHandler)
+export default function sendForm() {
+
+    const formElements = document.querySelectorAll('.form');
+
+    formElements.forEach(formHandler)
+}

@@ -1,29 +1,35 @@
-const designBlockElement = document.querySelector('.design-block');
-const modalElement = document.querySelector('.modal');
+import blockScrolled from './blockScrolled.js';
 
-const openModal = () => {
-    modalElement.classList.remove('hidden');
-    disableScroll();
-}
+const {disableScroll, enableScroll} = blockScrolled;
 
-const closeModal = () => {
-    modalElement.classList.add('hidden');
-    enableScroll();
-}
+export default function modal() {
+    const designBlockElement = document.querySelector('.design-block');
+    const modalElement = document.querySelector('.modal');
 
-designBlockElement.addEventListener('click', event => {
-    const target = event.target;
-
-    if(target.matches('.more')) {
-        openModal();
+    const openModal = () => {
+        modalElement.classList.remove('hidden');
+        disableScroll();
     }
-}); 
-
-modalElement.addEventListener('click', (event) => {
-    const target = event.target;
     
-    if (target.classList.contains('overlay')
-    || target.classList.contains('modal__close')) {
-        closeModal()
+    const closeModal = () => {
+        modalElement.classList.add('hidden');
+        enableScroll();
     }
-});
+
+    designBlockElement.addEventListener('click', event => {
+        const target = event.target;
+
+        if(target.matches('.more')) {
+            openModal();
+        }
+    }); 
+
+    modalElement.addEventListener('click', (event) => {
+        const target = event.target;
+        
+        if (target.classList.contains('overlay')
+        || target.classList.contains('modal__close')) {
+            closeModal()
+        }
+    });
+}

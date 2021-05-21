@@ -1,0 +1,14 @@
+import accordion from './accordion.js';
+import burger from './burgerMenu.js';
+import modal from './modal.js';
+import sendForm from './sendForm.js';
+import smoothScroll from './smoothScroll.js';
+import tabs from './tabs.js';
+
+accordion();
+burger();
+modal();
+sendForm();
+smoothScroll(0.3);
+tabs();
+
