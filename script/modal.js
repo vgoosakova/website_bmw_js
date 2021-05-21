@@ -1,4 +1,4 @@
-const moreElements = document.querySelectorAll('.more');
+const designBlockElement = document.querySelector('.design-block');
 const modalElement = document.querySelector('.modal');
 
 const openModal = () => {
@@ -11,8 +11,12 @@ const closeModal = () => {
     enableScroll();
 }
 
-moreElements.forEach(more => {
-    more.addEventListener('click', openModal);
+designBlockElement.addEventListener('click', event => {
+    const target = event.target;
+
+    if(target.matches('.more')) {
+        openModal();
+    }
 }); 
 
 modalElement.addEventListener('click', (event) => {
